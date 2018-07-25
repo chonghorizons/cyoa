@@ -1,30 +1,39 @@
 import React, { Component } from 'react'
-import PageEdit from './PageEdit'
-
+import PageContainer from './PageContainer'
 
 class StoryContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    // expects a pageId prop  /// Ask OR lookup about how to require props
+    this.state = { editMode: props.editMode };
   }
 
-  renderPageEdit(pageId) {
+  viewPageEdit() {
     return (
-      <PageEdit
-        value={4}
-      />
+      <div>
+        EDITING
+      </div>
     )
   }
 
-
-  render()   {
-    console.log("thisProps is :", this.props)
+  viewNormal() {
     return (
       <div>
         <h1>I am a story</h1>
         <p>My StoryId: {this.props.storyId}</p>
+      </div>)
+  }
 
-      </div>);
+  render()   {
+    console.log("thisProps is :", this.props);
+    const myStuff =  this.state.editMode ? this.viewPageEdit() : this.viewNormal();
+    return (
+      <div>
+       {myStuff}
+       <PageContainer editMode={false} />
+      </div>
+    )
+
   }
 }
 

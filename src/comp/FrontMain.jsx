@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class FrontMain extends React.Component {
+class FrontMain extends Component {
   constructor(props) {
     super(props);
     this.state = {};
