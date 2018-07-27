@@ -3,10 +3,26 @@ import React, { Component } from 'react'
 
 
 class PageContainer extends Component {
+    // expects a pageId prop  /// Ask OR lookup about how to require props
   constructor(props) {
     super(props);
-    // expects a pageId prop  /// Ask OR lookup about how to require props
-    this.state = { editMode: props.editMode };
+    let janky=true
+    if (!props.pageId && !janky) {
+      throw {errorMessage: "PageContainer needs a page id"}
+    }
+    this.state = {
+        storyText:"LOADING",
+        link1:"",
+        link2:"",
+        link3:"",
+        link4:"",
+    };
+  }
+
+
+  componentDidMount() {
+    //axios get for the story PageText
+    //set state.storyText and link fields.
   }
 
   viewPageEdit() {
