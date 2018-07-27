@@ -54,7 +54,7 @@ class PageText extends Component {
     } else {
       return (
         <div>
-          <p>This is a story, all about how...{<div className="Weird">Al {<p>{5}</p>} yankovich {this.props.password}</div>}</p>
+          <p>This is a story, all about how...{<span className="Weird">Al {<span>{5}</span>} yankovich {this.props.password}</span>}</p>
         </div>
       );
     }
